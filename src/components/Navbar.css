@@ -1,0 +1,38 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display: flex; /* Öğeleri yan yana dizer */
+  justify-content: space-between; /* İki uca yayar (Logo bir uçta, linkler diğer uçta) */
+  align-items: center; /* Dikeyde ortalar */
+  padding: 1rem 2rem; /* Üst/Alt ve Sol/Sağ boşluk */
+  background-color: #343a40; /* Koyu arka plan */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+.navbar-links {
+  list-style: none; /* Madde işaretlerini kaldır */
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 1.5rem; /* Bağlantılar arasına boşluk koy */
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Renk geçişi yumuşak olsun */
+}
+
+.navbar-links a:hover {
+  color: var(--primary-color); /* Fare üzerine gelince ana renk olsun */
+}

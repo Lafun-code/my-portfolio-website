@@ -1,0 +1,109 @@
+/* src/components/Hero.css */
+
+/* Global Terminal Stili */
+.hero-section {
+    max-width: 900px;
+    margin: 4rem auto; /* Ortala ve yukarıdan boşluk ver */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    font-family: 'Courier New', Courier, monospace; /* Retro terminal fontu */
+    /* Terminal rengi: Siyah veya koyu yeşil/mavi tonları */
+    --terminal-bg: #282c34; 
+    --terminal-text: #61f861; /* Parlak yeşil terminal metni */
+}
+
+/* Terminal Penceresi */
+.terminal-window {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    padding-bottom: 20px;
+}
+
+/* Başlık Çubuğu (Header) */
+.terminal-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #3e4451; /* Daha açık başlık rengi */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 10px;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Terminal İçeriği (Body) */
+.terminal-body {
+    padding: 15px 25px;
+}
+
+.terminal-line {
+    white-space: pre-wrap; /* Uzun metinlerin alt satıra geçmesini sağlar */
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.prompt {
+    color: #cccccc; /* Komut satırı (prompt) rengi */
+}
+
+.output {
+    color: var(--terminal-text); /* Çıktı metin rengi */
+}
+
+.accent-text {
+    font-weight: bold;
+    color: #e6e600; /* Vurgulu metin (isim) için parlak sarı */
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.sub-title {
+    color: #00ffcc; /* Başlık/etiket için camgöbeği (cyan) */
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Yanıp Sönen İmleç (Cursor) Efekti */
+.blinking-cursor::after {
+    content: "█"; /* Kare imleç */
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.terminal-list {
+    list-style: none; /* Varsayılan madde işaretlerini kaldır */
+    padding-left: 0;
+}
+
+.terminal-list li {
+    margin-bottom: 3px;
+    /* İsteğe bağlı: Her li başına terminaldeki gibi bir karakter koyabiliriz */
+}
+
+/* Deneyim/Eğitim listesi stilini biraz daha belirginleştirebiliriz */
+.terminal-body #education .terminal-line {
+    padding-left: 15px;
+}
