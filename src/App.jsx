@@ -1,18 +1,13 @@
 // src/App.jsx
 
-import Navbar from './components/Navbar'; 
-import Hero from './components/Hero'; 
-import SkillsEducation from './components/SkillsEducation';
+import TerminalShell from './components/TerminalShell'; 
+import './index.css'; // Global stilleri tutar (Eğer index.css'i temizlediyseniz, bu satırı tutun)
 
 function App() {
   return (
     <>
-      <Navbar /> 
-      <main>
-        <Hero /> 
-        <SkillsEducation /> {/* Yetenekler ve Eğitimi ekle */}
-        {/* Projeler ve İletişim buraya gelecek */}
-      </main>
+      {/* Tüm site artık tek bir terminal kabuğu içinde */}
+      <TerminalShell />
     </>
   );
 }

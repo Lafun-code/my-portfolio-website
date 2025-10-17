@@ -1,30 +1,29 @@
 /* src/components/Hero.css */
 
-/* Global Terminal Stili */
+/* GLOBAL TERMINAL STİLİ */
 .hero-section {
     max-width: 900px;
-    margin: 4rem auto; /* Ortala ve yukarıdan boşluk ver */
+    margin: 4rem auto;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    font-family: 'Courier New', Courier, monospace; /* Retro terminal fontu */
-    /* Terminal rengi: Siyah veya koyu yeşil/mavi tonları */
-    --terminal-bg: #282c34; 
-    --terminal-text: #61f861; /* Parlak yeşil terminal metni */
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+    font-family: 'Courier New', Courier, monospace;
+    --terminal-bg: #ffffff;
+    --terminal-text: #61f861; /* Parlak yeşil metin */
 }
 
-/* Terminal Penceresi */
+/* TERMINAL PENCERESİ */
 .terminal-window {
     background-color: var(--terminal-bg);
     color: var(--terminal-text);
     padding-bottom: 20px;
 }
 
-/* Başlık Çubuğu (Header) */
+/* BAŞLIK ÇUBUĞU (HEADER) */
 .terminal-header {
     display: flex;
     align-items: center;
     padding: 8px 12px;
-    background-color: #3e4451; /* Daha açık başlık rengi */
+    background-color: #3e4451;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -46,23 +45,29 @@
     font-size: 0.9rem;
 }
 
-/* Terminal İçeriği (Body) */
+/* TERMINAL İÇERİĞİ (BODY) */
 .terminal-body {
     padding: 15px 25px;
 }
 
 .terminal-line {
-    white-space: pre-wrap; /* Uzun metinlerin alt satıra geçmesini sağlar */
+    white-space: pre-wrap;
     margin-bottom: 5px;
     font-size: 1rem;
 }
 
 .prompt {
-    color: #cccccc; /* Komut satırı (prompt) rengi */
+    color: #cccccc;
 }
 
 .output {
     color: var(--terminal-text); /* Çıktı metin rengi */
+}
+
+/* GÖRÜNMEZLİK HATASI DÜZELTME */
+.terminal-list .terminal-line.output {
+    color: var(--terminal-text) !important; /* Rengi tekrar zorla */
+    opacity: 1 !important; /* Opaklığı zorla */
 }
 
 .accent-text {
@@ -75,15 +80,26 @@
 }
 
 .sub-title {
-    color: #00ffcc; /* Başlık/etiket için camgöbeği (cyan) */
+    color: #00ffcc;
     font-style: italic;
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
 
-/* Yanıp Sönen İmleç (Cursor) Efekti */
+/* LİNK STİLİ */
+.link-style {
+    color: #00ffff; /* Canlı mavi/cyan link rengi */
+    text-decoration: none;
+}
+
+.link-style:hover {
+    text-decoration: underline;
+    color: #e6e600; /* Hover'da sarıya dönsün */
+}
+
+/* YANIP SÖNEN İMLEÇ */
 .blinking-cursor::after {
-    content: "█"; /* Kare imleç */
+    content: "█";
     margin-left: 5px;
     animation: blink 1s step-end infinite;
 }
@@ -94,16 +110,78 @@
 }
 
 .terminal-list {
-    list-style: none; /* Varsayılan madde işaretlerini kaldır */
+    list-style: none;
     padding-left: 0;
 }
 
 .terminal-list li {
     margin-bottom: 3px;
-    /* İsteğe bağlı: Her li başına terminaldeki gibi bir karakter koyabiliriz */
 }
 
-/* Deneyim/Eğitim listesi stilini biraz daha belirginleştirebiliriz */
 .terminal-body #education .terminal-line {
     padding-left: 15px;
+}
+
+/* BÜTÜNLEŞİK KABUK (SHELL) STİLLERİ */
+.terminal-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282e38;
+}
+
+.terminal-window.full-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-navbar {
+    background-color: #1f8b5e;
+    padding: 5px 20px;
+    border-top: 1px solid #444;
+}
+
+.terminal-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.terminal-links li {
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.terminal-links a {
+    color: var(--terminal-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.terminal-links li.active a,
+.terminal-links a:hover {
+    color: #e6e600;
+    text-decoration: underline;
+}
+
+.terminal-content-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.terminal-content-area .hero-section {
+    margin: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.terminal-content-area .hero-section .terminal-header {
+    display: none;
 }

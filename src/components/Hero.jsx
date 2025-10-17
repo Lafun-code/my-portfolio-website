@@ -1,23 +1,16 @@
 // src/components/Hero.jsx
 
 import React from 'react';
-import './Hero.css'; // Sadece import ifadesi kalmalı.
+import './Hero.css'; 
 
 const Hero = () => {
-  // Kullanıcının sağladığı verileri burada kullanıyoruz
   const name = "Hüsnü Emre Berkay";
   const title = "Full-Stack Developer & Retro Technology Enthusiast";
   const aboutText = `Hello! I'm Emre. I build innovative solutions with modern web technologies. My journey started with HTML and CSS, and today I develop complex applications using technologies like C++ and C#. In my free time, I enjoy playing old games and dabbling in pixel art.`;
 
   return (
-    <section id="home" className="hero-section terminal-window">
-      <div className="terminal-header">
-        <span className="terminal-dot red"></span>
-        <span className="terminal-dot yellow"></span>
-        <span className="terminal-dot green"></span>
-        <span className="terminal-title">user@emre-portfolio: ~$ about.txt</span>
-      </div>
-      
+    <section id="home" className="hero-section">
+      {/* TerminalShell'den dolayı terminal-header'ı kaldırdık */}
       <div className="terminal-body">
         {/* Giriş Komutu */}
         <p className="terminal-line prompt">guest@portfolio:~$ whoami</p>
@@ -27,7 +20,7 @@ const Hero = () => {
 
         {/* Ana Başlık */}
         <p className="terminal-line output sub-title">
-            &gt; {title} {/* Hata çözümü için büyük ihtimalle buradaki '>' işareti yerine '&gt;' kullanılması gerekebilir. */}
+            &gt; {title}
         </p>
         
         {/* Hakkımda Metni */}
